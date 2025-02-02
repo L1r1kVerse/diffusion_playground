@@ -29,7 +29,7 @@ Features of the algorithm design used in toy_diffusion:
 * The amount of noise added to each input during training is random and does not follow a schedule.
 * The sampling strategy used is a very basic one, making smaller steps in the backward process when the input is very noisy and larger steps when it is cleaner.
 
-The forward (corruption) process fro toy_diffusion:
+The forward (corruption) process for toy_diffusion:
 <p align="center">
   <img src="data/toy_forward_process.png" width="1200"/>
 </p>
@@ -44,24 +44,48 @@ Sampling with the denoiser with five steps:
   <img src="data/toy_sampling_5_steps.png" width="1200"/>
 </p>
 
-Sampling with the denoiser with twenty steps:
-<p align="center">
-  <img src="data/toy_sampling_20_steps.png" width="1200"/>
-</p>
-
 References for toy_diffusion:
 - &nbsp; The notebook follows the [Diffusion Models from Scratch](https://huggingface.co/learn/diffusion-course/en/unit1/3) notebook in the Hugging Face Diffusion course, but the U-Net used is implemented in a different way - using two layers of 3X3 convolutions instead of one layer of 5X5 and without making use of torch.nn.ModuleList to access layers by index(the goal is to make the architecture more transparent).
 
 ## DDPM Diffusion
 
+Sinusoidal time step embeddings for DDPM visualized:
+<p align="center">
+  <img src="data/DDPM_sin_timestep_emb.png" width="800"/>
+</p>
+
+Noise schedules betas compared:
+<p align="center">
+  <img src="data/DDPM_ns_betas.png" width="800"/>
+</p>
+
+Noise schedules cumulative alpha products compared:
+<p align="center">
+  <img src="data/DDPM_ns_alphas_cumprod.png" width="800"/>
+</p>
+
+The forward diffusion process visualized for 300 steps:
+<p align="center">
+  <img src="data/DDPM_forward_300.png" width="1200"/>
+</p>
+
+Results of the backward diffusion process with 1000 steps (generated samples):
+<p align="center">
+  <img src="data/DDPM_gen_samples.png" width="800"/>
+</p>
+
+The backward diffusion process in action:
+<p align="center">
+  <img src="data/DDPM_back_dif_stages.gif" width="800"/>
+</p>
+
 References for DDPM diffusion:
-- &nbsp; The U-Net used is the based on Phil Wang's [implementation](https://github.com/lucidrains/denoising-diffusion-pytorch)- which itself is based on [the original TensorFlow implementation](https://github.com/hojonathanho/diffusion).
+- &nbsp; The U-Net used is the based on Phil Wang's [implementation](https://github.com/lucidrains/denoising-diffusion-pytorch) - which itself is based on [the original TensorFlow implementation](https://github.com/hojonathanho/diffusion).
 
 ### Paper and Blog References:
 
 #### Papers:
 - [x] [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597) <br>
-- [x] [An Introduction to Variational Autoencoders](https://arxiv.org/abs/1906.02691)<br>
 - [x] [Understanding Diffusion Models: A Unified Perspective](https://arxiv.org/abs/2208.11970)
 - [x] [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)
 
