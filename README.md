@@ -51,17 +51,17 @@ References for toy_diffusion:
 
 Sinusoidal time step embeddings for DDPM visualized:
 <p align="center">
-  <img src="data/DDPM_sin_timestep_emb.png" width="800"/>
+  <img src="data/DDPM_sin_timestep_emb.png" width="600"/>
 </p>
 
 Noise schedules betas compared:
 <p align="center">
-  <img src="data/DDPM_ns_betas.png" width="800"/>
+  <img src="data/DDPM_ns_betas.png" width="600"/>
 </p>
 
 Noise schedules cumulative alpha products compared:
 <p align="center">
-  <img src="data/DDPM_ns_alphas_cumprod.png" width="800"/>
+  <img src="data/DDPM_ns_alphas_cumprod.png" width="600"/>
 </p>
 
 The forward diffusion process visualized for 300 steps:
@@ -71,12 +71,12 @@ The forward diffusion process visualized for 300 steps:
 
 Results of the backward diffusion process with 1000 steps (generated samples):
 <p align="center">
-  <img src="data/DDPM_gen_samples.png" width="800"/>
+  <img src="data/DDPM_gen_samples.png" width="600"/>
 </p>
 
 The backward diffusion process in action:
 <p align="center">
-  <img src="data/DDPM_back_dif_stages.gif" width="800"/>
+  <img src="data/DDPM_back_dif_stages.gif" width="600"/>
 </p>
 
 References for DDPM diffusion:
