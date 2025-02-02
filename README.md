@@ -76,7 +76,7 @@ Results of the backward diffusion process with 1000 steps (generated samples):
 
 The backward diffusion process in action:
 <p align="center">
-  <img src="data/DDPM_back_dif_stages.gif" width="600"/>
+  <img src="data/DDPM_back_dif_stages_loop.gif" width="600"/>
 </p>
 
 References for DDPM diffusion:
@@ -92,6 +92,9 @@ References for DDPM diffusion:
 #### Blogs and other resources:
 - &nbsp; [Hugging Face Diffusion Models Course](https://huggingface.co/learn/diffusion-course/unit0/1)
 - &nbsp; [A university course by the Israel Institute of Technology, taught by Michael Elad](https://www.youtube.com/playlist?list=PL0H3pMD88m8XPBlWoWGyal45MtnwKLSkQ)
+- &nbsp; [The Annotated Diffusion Model](https://huggingface.co/blog/annotated-diffusion)
+- &nbsp; [Lilian Weng's blog](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
+- &nbsp; [Score based approach - Yang Song](https://yang-song.net/blog/2021/score/)
 
 
 
