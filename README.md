@@ -49,6 +49,16 @@ References for toy_diffusion:
 
 ## DDPM Diffusion
 
+Features of the algorithm design used in the DDPM notbook:
+* The architecture of the model is a again a U-Net, but is has about ten times more parameters. It is also more complex. It uses ResNet blocks which have a residual connection within themselves adding their input to their output. Linear attention is used in the downsample and upsample paths and standard multi-head self-attention at the bottleneck of the U-Net.
+* Spatial downsampling is done without any information loss by sending extra pixels to new feature maps and feeding the result to a convolutional layer to achieve the desired tensor shape.
+* Skip connections between the corresponding levels (the ones with the same tensor shapes) of the downsample and upsample do not add input to output like in toy_diffusion, but rather concatenate the input feature maps to the output feature maps.
+* The model is not trying to predict the clean image directly, but rather given a noisy image it tries to predict the noise.
+* The amount of noise added to each input during training follows a strict predetermined schedule consisting of a fixed number of steps.
+* Because the model parameters are shared (identical) for all steps in the forward/backward diffusion process, the model is provided additional information by being fed a tensor indicating the corresponding timesteps in the forward process for each input sample. The embeddings created from these timesteps shift and scale activations in the first sub-block of each ResNet block in the U-net.
+* The sampling strategy is much more sophisticated and seeks to model the reverse probability density function for a step in the backward diffusion process. It used the model's prediction for the noise and the forward process parameters to calculate the mean of this distribution and then adds new noise to it according to a fixed variance parameter. This introduces probabilistic outcomes and makes the sampling algorithm non-deterministic. A major downside is that generation requires a lot of steps and therefore a lot of forward passes through the model.
+* Adjusting the variance of the backward process has a large effect on the generated samples - too low variance leads to something close to mode collapse when only a small set of very similar samples are generated, too high variance can lead to samples which still contain a lot of noise.
+
 Sinusoidal time step embeddings for DDPM visualized:
 <p align="center">
   <img src="data/DDPM_sin_timestep_emb.png" width="600"/>
