@@ -10,12 +10,14 @@ Let’s dive into diffusion!
 The project is currently in active development.
 
 ## Project Structure
-- **`toy_diffusion.ipynb`**: A very basic implementation a diffusion model
+- **`toy_diffusion.ipynb`**: A very basic implementation of a diffusion model
 
-- **`DDPM.ipynb`**: A diffusion implementation based on the paper [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)
+- **`DDPM.ipynb`**: A diffusion model implementation based on the paper [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)
 
 - **`Secondary files:`**:
-    - **`helper_functions.py:`**: Helper functions for the project
+    - **`DDPM.py:`**: The code developed in DDPM.ipynb as a python module
+    - **`experiment.py:`**: A standard implementation of an experiment and experiment manager
+    - **`fmnist_experiments.ipynb:`**: Training experiments on the Fasion MNIST dataset
   
 
 ## Results
@@ -79,7 +81,7 @@ The forward diffusion process visualized for 300 steps:
   <img src="data/DDPM_forward_300.png" width="1200"/>
 </p>
 
-Results of the backward diffusion process with 1000 steps (generated samples):
+Results of the backward diffusion process with 1000 steps -on the MNIST dataset (generated samples):
 <p align="center">
   <img src="data/DDPM_gen_samples.png" width="600"/>
 </p>
@@ -89,8 +91,13 @@ The backward diffusion process in action:
   <img src="data/DDPM_back_dif_stages_loop.gif" width="600"/>
 </p>
 
+The same model trained on FashionMNIST:
+<p align="center">
+  <img src="data/DDPM_fas_mnist_gen_samples.png" width="600"/>
+</p>
+
 References for DDPM diffusion:
-- &nbsp; The U-Net used is the based on Phil Wang's [implementation](https://github.com/lucidrains/denoising-diffusion-pytorch) - which itself is based on [the original TensorFlow implementation](https://github.com/hojonathanho/diffusion).
+- &nbsp; The U-Net used is based on Phil Wang's [implementation](https://github.com/lucidrains/denoising-diffusion-pytorch) - which itself is based on [the original TensorFlow implementation](https://github.com/hojonathanho/diffusion).
 
 ### Paper and Blog References:
 
