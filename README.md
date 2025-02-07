@@ -91,7 +91,7 @@ The backward diffusion process in action:
   <img src="data/DDPM_back_dif_stages_loop.gif" width="600"/>
 </p>
 
-The same model trained on FashionMNIST:
+Results with the same model trained on FashionMNIST:
 <p align="center">
   <img src="data/DDPM_fas_mnist_gen_samples.png" width="600"/>
 </p>
